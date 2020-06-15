@@ -1,0 +1,38 @@
+.menu{
+    margin-top: 100px;
+    .menuList{
+        font-size: 15px;
+        cursor: pointer;
+        .menuListItem{
+            display: flex;
+            padding: 5px 25px;
+            align-items: center;
+            .iconItem{
+                margin-right: 20px;;
+            }
+        }
+        &:hover{
+            background-color: rgb(209, 248, 220);
+            border-left: solid 5px rgb(35, 207, 124);
+            color: black;
+            .menuListItem{
+                padding: 5px 20px;
+            }
+        }
+    }
+
+    .selectItem{
+        background-color: rgb(209, 248, 220);
+        border-left: solid 5px rgb(35, 207, 124);
+        color: black;
+        .menuListItem{
+            padding: 5px 20px;
+        }
+        &:hover{
+            border-left: none;
+            .menuListItem{
+                padding: 5px 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.mat-sidenav{
+    width: 220px;
+    
+}
+
+.sidenavAppComponent{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .overdraft{
+        position: absolute;
+        top: 0;
+        right: 10px;
+    }
+}

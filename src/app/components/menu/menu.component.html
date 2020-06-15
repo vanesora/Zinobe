@@ -1,1 +1,18 @@
-<p>menu works!</p>
+<div class="menu">
+    <div class="menuList" *ngFor = "let item of menuItems">
+        <div [ngClass]="{ 'selectItem': item.select }">
+            <div class="menuListItem" (click)="selectMenuItem(item)">
+                <div class="iconItem">
+                    <span class="material-icons">
+                        {{item.icon}}
+                    </span>
+                </div>
+                <div class="nameItem">
+                    {{item.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
