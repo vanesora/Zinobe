@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewAverdreftComponent } from './new-averdreft.component';
+import { NewOverdraftComponent } from './new-overdraft.component';
 
-describe('NewAverdreftComponent', () => {
-  let component: NewAverdreftComponent;
-  let fixture: ComponentFixture<NewAverdreftComponent>;
+describe('NewOverdraftComponent', () => {
+  let component: NewOverdraftComponent;
+  let fixture: ComponentFixture<NewOverdraftComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewAverdreftComponent ]
+      declarations: [ NewOverdraftComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NewAverdreftComponent);
+    fixture = TestBed.createComponent(NewOverdraftComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

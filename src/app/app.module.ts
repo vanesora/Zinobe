@@ -11,7 +11,7 @@ import { NewUserComponent } from './pages/new-user/new-user.component';
 import { UsersComponent } from './pages/users/users.component';
 import { RejectedsComponent } from './pages/rejecteds/rejecteds.component';
 import { ApprovedsComponent } from './pages/approveds/approveds.component';
-import { NewAverdreftComponent } from './pages/new-averdreft/new-averdreft.component';
+import { NewOverdraftComponent } from './pages/new-overdraft/new-overdraft.component';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -25,7 +25,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     UsersComponent,
     RejectedsComponent,
     ApprovedsComponent,
-    NewAverdreftComponent
+    NewOverdraftComponent
   ],
   imports: [
     BrowserModule,
