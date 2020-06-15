@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
       return itemMenu;
     });
     item.select = true;
-    this._router.navigate([`/home/${item.path}`]);
+    this._router.navigate([`/${item.path}`]);
   }
 
 }
