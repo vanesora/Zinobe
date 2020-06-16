@@ -1,6 +1,6 @@
 export interface OverdraftInterface {
     userId: string;
-    answers: boolean;
+    answer: boolean;
     amount: number;
     status: string;
 }

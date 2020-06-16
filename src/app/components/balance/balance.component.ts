@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OverdraftService } from 'src/app/services/overdraft.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-balance',
@@ -9,7 +11,7 @@ import { OverdraftService } from 'src/app/services/overdraft.service';
 export class BalanceComponent implements OnInit {
 
   constructor(
-    public overdraftService: OverdraftService
+    public overdraftService: OverdraftService,
   ) { }
 
   ngOnInit() {
