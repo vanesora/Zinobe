@@ -2,24 +2,34 @@
     <div class="title">
         Lista de prestamos aprobados
     </div>
-    <div class="list" *ngFor="let overdraft of overdraftService.overdraftsUsers">
-        <div class="titleItem">
+    <div class="titleItem">
+        <div class="titleItemName">
             <div>
                 Nombre Solicitante
             </div>
             <div>
-                Valor
-            </div>
-            <div>
-                Pagar
+                Cédula
             </div>
         </div>
+        <div>
+            Valor
+        </div>
+        <div>
+            Pagar
+        </div>
+    </div>
+    <div class="list" *ngFor="let overdraft of overdraftService.overdraftsUsers">
         <div class="item" *ngIf="overdraft.answer === true">
-            <div>
-                {{overdraft.user.name}}
+            <div class="titleName">
+                <div>
+                    {{overdraft.user.name}}
+                </div>
+                <div>
+                    {{overdraft.user.identification}}
+                </div>
             </div>
             <div>
-                {{overdraft.amount}}
+                ${{overdraft.amount}}
             </div>
             <div *ngIf="overdraft.status === 'negative'">
                 <button mat-flat-button color="primary" (click)="pay(overdraft)">Pagar</button>

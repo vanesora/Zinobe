@@ -1,1 +1,21 @@
-<app-overdraft></app-overdraft>
+<div class="newUser">
+    <form #myForm="ngForm" [formGroup]="overdraftForm" (ngSubmit)="request()">
+        <div class="row">
+            <p class="col-6 offset-1" o>Solicitar prestamo</p>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-6 offset-1">
+                <mat-label>Usuario(*)</mat-label>
+                <mat-select formControlName="user">
+                    <mat-option *ngFor="let overdraft of overdraftService.users" [value]="overdraft">
+                        {{overdraft.identification}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <app-overdraft class="col-6 offset-1" (spread)="requestValue($event)"></app-overdraft>
+            <div class="button-wrapper col-2 offset-6">
+                <button mat-flat-button color="primary">Solicitar</button>
+            </div>
+        </div>
+    </form>
+</div>
