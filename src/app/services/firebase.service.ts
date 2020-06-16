@@ -58,7 +58,7 @@ export class FirebaseService {
 
   public UpdateOverdraft(overdraft: OverdraftInterface) {
     const id = overdraft.id;
-    this.overdraftDoc = this.afs.doc<OverdraftInterface>(`users/${id}`);
+    this.overdraftDoc = this.afs.doc<OverdraftInterface>(`overdrafts/${id}`);
     this.overdraftDoc.update(overdraft);
   }
 

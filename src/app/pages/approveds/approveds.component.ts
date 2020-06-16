@@ -15,4 +15,8 @@ export class ApprovedsComponent implements OnInit {
   ngOnInit() {
   }
 
+  public pay(overdraft) {
+
+  }
+
 }

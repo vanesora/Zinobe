@@ -22,7 +22,10 @@
                 {{overdraft.amount}}
             </div>
             <div *ngIf="overdraft.status === 'negative'">
-                <button mat-flat-button color="primary">Pagar</button>
+                <button mat-flat-button color="primary" (click)="pay(overdraft)">Pagar</button>
+            </div>
+            <div *ngIf="overdraft.status === 'positive'">
+                finalizado
             </div>
         </div>
     </div>
