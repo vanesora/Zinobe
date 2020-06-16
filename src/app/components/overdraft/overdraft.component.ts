@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./overdraft.component.scss']
 })
 export class OverdraftComponent implements OnInit {
+
+  @Output()
+  public spread = new EventEmitter<any>();
 
   public overdraftForm: FormGroup;
 
@@ -20,8 +23,8 @@ export class OverdraftComponent implements OnInit {
     });
   }
 
-  saveOverdraft(){
-    
+  saveOverdraft() {
+    this.spread.emit({ value: this.overdraftForm.value.value, error: this.overdraftForm.controls.value.errors });
   }
 
 }

@@ -48,18 +48,18 @@ export class FirebaseService {
     }));
   }
 
-  public AddOverdraft(overdraft: OverdraftInterface) {
-    this.overdraftCollection.add(overdraft);
+  public AddOverdraft(overdraft: OverdraftInterface): Promise<any> {
+    return this.overdraftCollection.add(overdraft);
   }
 
-  public AddUsers(user: UserInterface) {
-    this.userCollection.add(user);
+  public AddUsers(user: UserInterface): Promise<any> {
+    return this.userCollection.add(user);
   }
 
-  public UpdateOverdraft(overdraft: OverdraftInterface) {
+  public UpdateOverdraft(overdraft: OverdraftInterface): Promise<any> {
     const id = overdraft.id;
     this.overdraftDoc = this.afs.doc<OverdraftInterface>(`overdrafts/${id}`);
-    this.overdraftDoc.update(overdraft);
+    return this.overdraftDoc.update(overdraft);
   }
 
 }

@@ -1,1 +1,22 @@
-<p>new-user works!</p>
+<div class="newUser">
+    <form #myForm="ngForm" [formGroup]="userForm" (ngSubmit)="request()">
+        <div class="row">
+            <p class="col-6 offset-1" o>Solicitar prestamo nuevo usuario</p>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-6 offset-1">
+                <input matInput placeholder="Nombre(*)" formControlName="name" type="text">
+            </mat-form-field>
+            <mat-form-field class="col-6 offset-1">
+                <input matInput placeholder="Correo(*)" formControlName="email" type="text">
+            </mat-form-field><mat-form-field class="col-6 offset-1">
+                <input matInput placeholder="Cédula(*)" formControlName="identification" type="text">
+            </mat-form-field>
+            <app-overdraft class="col-6 offset-1"
+            (spread)="requestValue($event)"></app-overdraft>
+            <div class="button-wrapper col-2 offset-6">
+                <button mat-flat-button color="primary">Solicitar</button>
+            </div>
+        </div>
+    </form>    
+</div>
