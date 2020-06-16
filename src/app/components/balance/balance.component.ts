@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OverdraftService } from 'src/app/services/overdraft.service';
 
 @Component({
   selector: 'app-balance',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BalanceComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public overdraftService: OverdraftService
+  ) { }
 
   ngOnInit() {
   }
