@@ -2,5 +2,5 @@ export interface UserInterface {
     name: string;
     email: string;
     identification: string;
-    userId?: string;
+    id?: string;
 }

@@ -3,4 +3,5 @@ export interface OverdraftInterface {
     answer: boolean;
     amount: number;
     status: string;
+    id?: string;
 }

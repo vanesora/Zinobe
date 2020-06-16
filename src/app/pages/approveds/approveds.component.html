@@ -1,1 +1,30 @@
-<p>approveds works!</p>
+<div class="page">
+    <div class="title">
+        Lista de prestamos aprobados
+    </div>
+    <div class="list" *ngFor="let overdraft of overdraftService.overdraftsUsers">
+        <div class="titleItem">
+            <div>
+                Nombre Solicitante
+            </div>
+            <div>
+                Valor
+            </div>
+            <div>
+                Pagar
+            </div>
+        </div>
+        <div class="item" *ngIf="overdraft.answer === true">
+            <div>
+                {{overdraft.user.name}}
+            </div>
+            <div>
+                {{overdraft.amount}}
+            </div>
+            <div *ngIf="overdraft.status === 'negative'">
+                <button mat-flat-button color="primary">Pagar</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

@@ -3,6 +3,8 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { OverdraftInterface } from '../models/overdraft';
 import { Observable } from 'rxjs';
 import { UserInterface } from '../models/user';
+import { map } from 'rxjs/operators'
+import { OverdraftUserInterface } from '../models/overdraftUser';
 
 @Injectable({
   providedIn: 'root'
@@ -20,23 +22,44 @@ export class FirebaseService {
 
   private overdraftCollection: AngularFirestoreCollection<OverdraftInterface>;
   private overdraft: Observable<OverdraftInterface[]>;
+  private overdraftDoc: AngularFirestoreDocument<OverdraftInterface>;
   private userCollection: AngularFirestoreCollection<UserInterface>;
   private user: Observable<UserInterface[]>;
 
   public getAllOverdraft() {
-    return this.overdraft;
+    return this.overdraft = this.overdraftCollection.snapshotChanges()
+      .pipe(map(changes => {
+        return changes.map(action => {
+          const data = action.payload.doc.data() as OverdraftInterface;
+          data.id = action.payload.doc.id;
+          return data;
+        });
+      }));
   }
 
   public getAllUsers() {
-    return this.user;
+    return this.user = this.userCollection.snapshotChanges()
+    .pipe(map(changes => {
+      return changes.map(action => {
+        const data = action.payload.doc.data() as UserInterface;
+        data.id = action.payload.doc.id;
+        return data;
+      });
+    }));
   }
 
-  public AddOverdraft() {
-    return this.overdraft;
+  public AddOverdraft(overdraft: OverdraftInterface) {
+    this.overdraftCollection.add(overdraft);
   }
 
-  public AddUsers() {
-    return this.overdraft;
+  public AddUsers(user: UserInterface) {
+    this.userCollection.add(user);
+  }
+
+  public UpdateOverdraft(overdraft: OverdraftInterface) {
+    const id = overdraft.id;
+    this.overdraftDoc = this.afs.doc<OverdraftInterface>(`users/${id}`);
+    this.overdraftDoc.update(overdraft);
   }
 
 }

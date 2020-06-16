@@ -2,3 +2,28 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page{
+    margin: 30px;
+
+    .title{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .list{
+        width: 700px;
+
+        .titleItem{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .item{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

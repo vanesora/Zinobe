@@ -1,1 +1,24 @@
-<p>rejecteds works!</p>
+<div class="page">
+    <div class="title">
+        Lista de prestamos rechazados
+    </div>
+    <div class="list" *ngFor="let overdraft of overdraftService.overdraftsUsers">
+        <div class="titleItem">
+            <div>
+                Nombre Solicitante
+            </div>
+            <div>
+                Valor
+            </div>
+        </div>
+        <div class="item" *ngIf="overdraft.answer === false">
+            <div>
+                {{overdraft.user.name}}
+            </div>
+            <div>
+                {{overdraft.amount}}
+            </div>
+        </div>
+    </div>
+    
+</div>
