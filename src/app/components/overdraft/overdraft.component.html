@@ -1,1 +1,17 @@
-<p>overdraft works!</p>
+<div class="overdraft">
+    <form #myForm="ngForm" [formGroup]="overdraftForm" (ngSubmit)="saveOverdraft()">
+        <div class="row">
+            <p class="col-6 offset-1" o>Valor mínimo $100.000 y valor máximo $1'000.000</p>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-6 offset-1">
+                <input matInput placeholder="Valor(*)" formControlName="value" type="number">
+                <mat-error *ngIf="overdraftForm.controls.value.errors?.max">El valor debe ser máximo $1'000.000</mat-error>
+                <mat-error *ngIf="overdraftForm.controls.value.errors?.min">El valor debe ser mínimo $100.000</mat-error>
+            </mat-form-field>
+            <div class="button-wrapper col-2">
+                <button mat-flat-button color="primary">Aceptar</button>
+            </div>
+        </div>
+    </form>
+</div>

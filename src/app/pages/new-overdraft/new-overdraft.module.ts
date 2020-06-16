@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewOverdraftComponent } from './new-overdraft.component';
 import { NewOverdraftRoutingModule } from './new-overdraft-routing.module';
+import { OverdraftModule } from 'src/app/components/overdraft/overdraft.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { NewOverdraftRoutingModule } from './new-overdraft-routing.module';
   ],
   imports: [
     CommonModule,
-    NewOverdraftRoutingModule
+    NewOverdraftRoutingModule,
+    OverdraftModule
   ],
   providers: [],
 })
