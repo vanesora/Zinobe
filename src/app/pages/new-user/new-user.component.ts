@@ -44,6 +44,7 @@ export class NewUserComponent implements OnInit {
       this.overdraft.answer = true;
     } else {
       message = 'Prestamo denegado';
+      this.overdraft.answer = false;
     }
     this.user = {
       email: this.userForm.value.email,
