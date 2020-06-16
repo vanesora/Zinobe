@@ -1,1 +1,45 @@
-<p>users works!</p>
+<div class="page">
+    <div class="title">
+        Lista de usuarios
+    </div>
+    <div class="titleItem">
+        <div class="titleItemName">
+            <div>
+                Nombre Solicitante
+            </div>
+            <div>
+                Cédula
+            </div>
+        </div>
+        <div>
+            Valor
+        </div>
+        <div>
+            Aceptado
+        </div>
+        <div>
+            Pago
+        </div>
+    </div>
+    <div *ngFor="let overdraft of overdraftService.overdraftsUsers" class="list">
+        <div class="item">
+            <div class="titleName">
+                <div>
+                    {{overdraft.user.name}}
+                </div>
+                <div>
+                    {{overdraft.user.identification}}
+                </div>
+            </div>
+            <div>
+                ${{overdraft.amount}}
+            </div>
+            <div>
+                {{overdraft.answer}}
+            </div>
+            <div>
+                {{overdraft.status}}
+            </div>
+        </div>
+    </div>
+</div>

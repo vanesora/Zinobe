@@ -1,0 +1,23 @@
+.page{
+
+    .titleItem{
+
+        .titleItemName{
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+    }
+
+    .list{
+
+        .item{
+
+            .titleName{
+                display: flex;
+                justify-content: space-between;
+                width: 300px;
+            }
+        }
+    }
+}

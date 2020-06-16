@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from 'src/app/services/firebase.service';
+import { OverdraftService } from 'src/app/services/overdraft.service';
 
 @Component({
   selector: 'app-users',
@@ -9,13 +9,10 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class UsersComponent implements OnInit {
 
   constructor(
-    private firebaseService: FirebaseService
+    public overdraftService: OverdraftService,
   ) { }
 
   ngOnInit() {
-    this.firebaseService.getAllOverdraft().subscribe(overdrafts => {
-      console.log(overdrafts);
-    });
   }
 
 }
